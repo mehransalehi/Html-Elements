@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Dosis:wght@200;600&family=Noto+Naskh+Arabic&display=swap');
+
+  :root {
+   --c1: #212121;
+   --c2: white;
+  }
+
+  * {
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+  }
+
+  body {
+   background-color: var(--c1);
+  }
+
+  .container {
+   position: relative;
+   margin: auto;
+   width: 100%;
+   height: 100vh;
+   overflow: hidden;
+  }
+
+  .card-container {
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 15px;
+   width: 900px;
+   perspective: 1000px;
+   z-index: 11;
+  }
+
+  .card {
+   position: absolute;
+   width: 300px;
+   height: 400px;
+   box-shadow: 2px 2px 5px black;
+   text-align: center;
+   font-size: 40px;
+   color: var(--c1);
+   transition: all 1s;
+   left: 0;
+   transform-style: preserve-3d;
+   background-position: center center;
+   background-size: cover;
+   color: var(--c2);
+  }
+
+  .card * {
+   transition: all 1s;
+  }
+
+  .card:nth-child(1) {
+   background-image: url('https://images.unsplash.com/photo-1529678281889-06795171e7d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');
+  }
+
+  .card:nth-child(2) {
+   background-image: url('https://images.unsplash.com/photo-1533158144217-7c40c238db06?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');
+  }
+
+  .card:nth-child(3) {
+   background-image: url('https://images.unsplash.com/photo-1534515729281-5ddf2c470538?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');
+  }
+
+
+  .card.left {
+   left: 0;
+   transform: rotateY(20deg) scale(0.9);
+   z-index: 1;
+   filter: brightness(50%) grayscale(60%);
+  }
+
+  .card.left * {
+   opacity: 0;
+   transform: translateY(50px);
+  }
+
+  .card.middle {
+   left: 50%;
+   transform: translateX(-50%);
+   z-index: 10;
+  }
+
+  .card.middle:hover {
+   transform: translateX(-50%) rotateY(15deg);
+  }
+
+  .card.right {
+   left: 100%;
+   transform: translateX(-100%) rotateY(-20deg) scale(0.9);
+   z-index: 1;
+   filter: brightness(50%) grayscale(60%);
+  }
+
+  .card.right * {
+   opacity: 0;
+   transform: translateY(50px);
+  }
+
+  .left-arrow {
+   color: var(--c2);
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   left: -50px;
+   font-size: 40px;
+   cursor: pointer;
+  }
+
+  .right-arrow {
+   color: var(--c2);
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   right: -50px;
+   font-size: 40px;
+   cursor: pointer;
+  }
+
+  .bg {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   background-position: center center;
+   background-size: cover;
+   filter: brightness(30%) blur(10px);
+   transition: all 1s;
+   left: 0;
+  }
+
+  .bg:nth-child(1) {
+   background-image: url('https://images.unsplash.com/photo-1529678281889-06795171e7d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');
+  }
+
+  .bg:nth-child(2) {
+   background-image: url('https://images.unsplash.com/photo-1533158144217-7c40c238db06?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');
+  }
+
+  .bg:nth-child(3) {
+   background-image: url('https://images.unsplash.com/photo-1534515729281-5ddf2c470538?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');
+  }
+
+  .bg-left {
+   left: -100%;
+   z-index: 1;
+  }
+
+  .bg-middle {
+   left: 50%;
+   transform: translateX(-50%);
+   z-index: 10;
+  }
+
+  .bg-right {
+   left: 100%;
+   z-index: 1;
+  }
+
+
+  .card .name {
+   position: absolute;
+   text-shadow: 5px 5px 5px black, -3px -3px 2px black;
+   font-weight: bold;
+   font-family: 'Dosis', sans-serif;
+   text-align: left;
+   left: -50%;
+   top: 50%;
+   font-size: 30px;
+   padding: 20px;
+   border-bottom: 10px solid white;
+  }
+
+  .card .name span {
+   font-family: 'Noto Naskh Arabic', serif;
+  }
+
+  .card .quote {
+   font-family: 'Caveat', cursive;
+   text-shadow: 2px 2px 2px black;
+   font-weight: bold;
+   position: absolute;
+   text-align: left;
+   left: -50%;
+   top: 80%;
+   font-size: 50px;
+  }
+
+  .card.middle .name {
+   animation-name: fadeUp;
+   animation-duration: 0.5s;
+   animation-timing-function: ease;
+   animation-delay: 1s;
+   animation-iteration-count: 1;
+   animation-fill-mode: forwards;
+   opacity: 0;
+  }
+
+  .card.middle .quote {
+   animation-name: fadeUp;
+   animation-duration: 0.5s;
+   animation-timing-function: ease;
+   animation-delay: 1.5s;
+   animation-iteration-count: 1;
+   animation-fill-mode: forwards;
+   opacity: 0;
+  }
+
+  @keyframes fadeUp {
+   from {
+    opacity: 0;
+    transform: translateY(50px);
+   }
+
+   to {
+    opacity: 1;
+    transform: translateY(0px);
+   }
+  }
+
+  .logo {
+   position: absolute;
+   text-shadow: 5px 5px 5px black, -3px -3px 2px black;
+   font-weight: bold;
+   font-family: 'Dosis', sans-serif;
+   text-align: left;
+   left: 10%;
+   top: 10%;
+   transform: translateX(-50%);
+   font-size: 30px;
+   padding: 20px;
+   z-index: 1000;
+   color: white;
+}

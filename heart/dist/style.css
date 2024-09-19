@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+  :root{
+   --c1: #E3383F;
+   --c2: #FAF3F0;
+   --c3: #9288F8;
+  }
+  body{
+   background-color:#212121;
+   font-family: 'Rubik', sans-serif;
+  }
+  .container{
+   position: absolute;
+   left:50%;
+   top:50%;
+   transform: translate(-50%,-50%);
+   animation: heartbeat 1.5s infinite;
+  }
+  .heart{
+   position: absolute;
+   left:50%;
+   top:50%;
+   transform: translate(-50%,-50%);
+   width: 24px;
+   height: 24px;
+   clip-path: path("M12 4.419c-2.826-5.695-11.999-4.064-11.999 3.27 0 7.27 9.903 10.938 11.999 15.311 2.096-4.373 12-8.041 12-15.311 0-7.327-9.17-8.972-12-3.27z");
+   transform: scale(20);
+   overflow:hidden;
+  }
+  .after::after{
+   content: "";
+   height:200%;
+   width:30%;
+   background: var(--c2);
+   position: absolute;
+   left:50%;
+   top:50%;
+   transform: translate(-50%,-50%);
+   animation: rotatebg 2s linear infinite;
+   z-index:1
+  }
+  .h2{
+   transform:translate(-50%,-50%) scale(0.98);
+   z-index:10;
+  }
+  .h2.after::after{
+   background: var(--c1);
+   animation-delay: 0.2s;
+  }
+  .h3{
+   transform:translate(-50%,-50%) scale(0.96);
+   z-index:10;
+  }
+  .h3.after::after{
+   background: var(--c3);
+   animation-delay: 0.4s;
+  }
+  .h4{
+   background: #EA1179;
+   transform:translate(-50%,-50%) scale(0.94);
+   z-index:10;
+  }
+  .text{
+   text-align: center;
+   position: absolute;
+   left: 50%;
+   top: 44%;
+   transform: translate(-50%,-50%);
+   font-size: 3px;
+   color: white;
+  }
+  @keyframes rotatebg {
+   from{
+    transform: translate(-50%,-50%) rotate(0deg);
+   }
+   to{
+    transform: translate(-50%,-50%) rotate(360deg);
+   }
+  }
+  @keyframes heartbeat
+  {
+    0%
+    {
+      transform: scale( .95 );
+    }
+    20%
+    {
+      transform: scale( 1 );
+    }
+    40%
+    {
+      transform: scale( .95 );
+    }
+    60%
+    {
+      transform: scale( 1 );
+    }
+    80%
+    {
+      transform: scale( .95 );
+    }
+    100%
+    {
+      transform: scale( .95 );
+    }
+  }

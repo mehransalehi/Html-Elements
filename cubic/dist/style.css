@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100&display=swap');
+  :root{
+   --size:350px;
+   --extra : calc(var(--size) * 0.1);
+   --sum : calc(var(--size) + var(--extra))
+  }
+  body{
+   background-color:#212121;
+   font-family: 'Kanit', sans-serif;
+  }
+  .container{
+   position: absolute;
+   left:50%;top:50%;
+   transform: translate(-50%,-50%);
+  }
+  .cubic{
+   position:relative;
+   width: var(--size);
+   height:  var(--size);
+   margin: auto;
+   color: #ca62bc;
+   box-shadow: inset 0 0 0 1px rgba(202, 121, 0, 0.5);
+   transition: all .5s;
+   transform: rotate(-45deg);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+  }
+  .cubic span{
+   font-size: 60px;
+   transform: rotate(45deg);
+   transition: all .5s;
+  }
+  .cubic:hover{
+   transform: rotate(0deg);
+   color: #cab762;
+  }
+  .cubic:hover span{
+   transform: rotate(0deg);
+   color: #cab762;
+  }
+  .cubic::before, .cubic::after {
+   position:absolute;
+   top:0;left:0;
+   width:var(--sum);
+   height:var(--sum);
+   content: "";
+   z-index: -1;
+   margin: -5%;
+   box-shadow: inset 0 0 0 2px;
+   animation: clipMe 8s linear infinite;
+  }
+  .cubic::before {
+   animation-delay: -4s;
+  }
+
+  @keyframes clipMe {
+   0%, 100% {
+    clip: rect(0, var(--sum), 2px, 0px);
+   }
+   25% {
+     clip: rect(0px, 2px, var(--sum), 0px);
+   }
+   50% {
+     clip: rect(calc(var(--sum) - 2px), var(--sum), var(--sum), 0px);
+   }
+   75% {
+     clip: rect(0px, var(--sum), var(--sum), calc(var(--sum) - 2px));
+   }
+  }

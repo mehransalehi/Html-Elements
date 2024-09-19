@@ -1,0 +1,109 @@
+
+   @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap');
+  :root{
+   --w : 700px;
+  }
+  body{
+   background-color: #212121;
+   font-family: 'Mukta', sans-serif;
+  }
+  .container{
+   width:var(--w);
+   height:655px;
+   position:absolute;
+   left:50%;top:50%;
+   transform: translate(-50%,-50%);
+   overflow: hidden;
+  }
+  .goleft,.goright{
+   position: absolute;
+   background-color: #212121;
+   padding: 5px;
+   color:white;
+   cursor: pointer;
+   bottom:0;
+   left:45%;
+  }
+  .goleft:hover,.goright:hover{
+   background-color: #444;
+  }
+  .goright{
+   left:55%;
+  }
+  .slider{
+   position:absolute;
+   left:0;
+   height: 100%;
+   display: flex;
+   transition: all 0.5s;
+  }
+  .item{
+   width:var(--w);
+   height:100%;
+   transform: rotate(45deg);
+   opacity: 0;
+   transition: all 0.5s;
+  }
+  .item.current{
+   transform: rotate(0deg);
+   opacity: 1;
+  }
+  .item img{
+   width:100%;
+  }
+  .item .texts{
+    position: absolute;
+    top: 55%;
+    left:0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color:white;
+  }
+  .item .texts span{
+    margin-top: 5px;
+    background-color: black;
+    padding:0px 4px;
+    opacity:0;
+  }
+
+  .item.current .texts span{
+    animation-name: fadein;
+    animation-duration: 0.5s;
+    animation-delay: 0.3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    transform: translateY(30px);
+  }
+
+
+  .item .texts span:nth-child(1){
+    font-size: 30px;
+  }
+
+  .item .texts span:nth-child(2){
+    animation-delay: 0.4s;
+  }
+
+  .item .texts span:nth-child(3){
+    animation-delay: 0.5s;
+  }
+
+  .item .texts span:nth-child(4){
+    animation-delay: 0.6s;
+  }
+  @keyframes fadein {
+    from{
+      opacity: 0;
+    transform: translateY(30px);
+    }
+    to{
+      opacity: 1;
+    transform: translateY(0px);
+    }
+  }
+
+a{
+  color:white;
+  font-size:30px;
+}

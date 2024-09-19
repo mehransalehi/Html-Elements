@@ -1,0 +1,100 @@
+:root {
+      --width: 800px;
+      --tin: 3px;
+      --dis: 30px;
+    }
+
+    body {
+      background-color: black;
+    }
+
+    .container {
+      position: absolute;
+      width: var(--width);
+      height: var(--width);
+      transform: translate(-50%, -50%);
+      left: 50%;
+      top: 50%;
+      perspective: 5000px;
+
+    }
+
+    .triangle {
+      position: absolute;
+      --gap: calc(var(--dis) * var(--i));
+      --mt: calc(var(--gap)/5);
+      width: calc(100% - var(--gap));
+      height: calc(100% - var(--gap));
+      transform-style: preserve-3d;
+      transform: translate(-50%, -50%) rotateY(0deg);
+      left: 50%;
+      top: 50%;
+      margin-top: var(--mt);
+      animation: rotateYe 4s linear 0s infinite alternate both;
+      animation-delay: calc(2s - calc(var(--i) * 0.04s));
+      /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    }
+
+    .triangle span {
+      position: absolute;
+      width: 100%;
+      height: var(--tin);
+      background-image: linear-gradient(90deg, rgb(31, 7, 31), rgb(207, 23, 207));
+      bottom: 0;
+      border-radius: 30px;
+    }
+
+    .triangle::after {
+      background-image: linear-gradient(0deg, rgb(46, 8, 44), rgb(222, 16, 230));
+      transform: rotate(30deg);
+      transform-origin: 100% 100%;
+    }
+
+    .triangle::before {
+      background-image: linear-gradient(0deg, rgb(223, 16, 205), rgb(126, 6, 150));
+      left: 100%;
+      transform: rotate(-30deg);
+      transform-origin: 100% 100%;
+    }
+
+    .triangle::after,
+    .triangle::before {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: var(--tin);
+      bottom: 0;
+      border-radius: 30px;
+    }
+
+    @keyframes rotateYe {
+      0% {
+        transform: translate(-50%, -50%) rotateY(0deg);
+        filter: hue-rotate(calc(var(--i) * 1deg));
+      }
+
+      30% {
+        transform: translate(-50%, -50%) rotateY(0deg);
+        filter: hue-rotate(calc(var(--i) * 1deg));
+      }
+
+      55% {
+        transform: translate(-50%, -50%) rotateY(60deg);
+        filter: hue-rotate(calc(var(--i) * 10deg));
+      }
+
+      65% {
+        transform: translate(-50%, -50%) rotateY(60deg);
+        filter: hue-rotate(calc(var(--i) * 10deg));
+      }
+
+      95% {
+        transform: translate(-50%, -50%) rotateY(-60deg);
+        filter: hue-rotate(calc(var(--i) * 15deg));
+      }
+
+      100% {
+        transform: translate(-50%, -50%) rotateY(-60deg);
+        filter: hue-rotate(calc(var(--i) * 15deg));
+      }
+}

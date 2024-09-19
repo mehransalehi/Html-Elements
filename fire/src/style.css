@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@500&display=swap');
+  :root{
+   --main : #212121;
+   --bg : orange;
+  }
+  body{
+   background-color: var(--main);
+   font-family: 'Yanone Kaffeesatz', sans-serif;
+  }
+  .container{
+   top:50%;
+   left:50%;
+   position: absolute;
+   transform: translate(-50%,-50%);
+   width:500px;
+   height:500px;
+   background-color:var(--bg);
+   border-radius: 50%;
+  }
+  .text{
+   top:50%;
+   left:50%;
+   position: absolute;
+   transform: translate(-50%,-50%);
+   color:white;
+   width:50%;height:50%;
+   background-color: var(--main);
+   z-index: 10;
+   border-radius: 50%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 60px;
+  }
+  .bubble-container{
+   position: absolute;
+   bottom: 0;
+   left:50%;
+   transform:translateX(-50%) rotate(calc(var(--i) * 10deg));
+   width:50px;
+   height: 50%;
+   transform-origin: top;
+   z-index:1;
+  }
+  .bubble{
+   position: absolute;
+   border-radius: 50%;
+   width:calc(var(--s) * 1px);
+   height:calc(var(--s) * 1px);
+   left:calc(var(--p) * 1%);
+   background-color:var(--bg);
+   z-index:10;
+   bottom: calc(var(--b) * 1px);
+   transform: translateX(-50%);
+   animation: bubble-size calc(var(--t) * 1s) ease-in infinite calc(var(--d) * 1s),
+   bubble-move calc(var(--t) * 1s) ease-in infinite calc(var(--d) * 1s);
+  }
+  @keyframes bubble-size {
+    0%, 75% {
+      width: calc(var(--s) * 1px);
+      height: calc(var(--s) * 1px);
+    }
+    100% {
+      width: 0px;
+      height: 0px;
+    }
+  }
+  @keyframes bubble-move {
+    0% {
+      bottom: calc(var(--b) * 1px);
+    }
+    100% {
+      bottom: calc(var(--di) * 1px);
+    }
+  }

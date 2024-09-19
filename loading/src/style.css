@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;400&display=swap');
+
+  :root {
+   --c1: #322653;
+   --c2: #FAF3F0;
+   --c3: #9288F8;
+   --c4: #FFD2D7;
+   --c5: #C51605;
+
+  }
+
+  body {
+   background: var(--c1);
+   height: 100vh;
+   overflow: hidden;
+   font-family: 'Josefin Sans', sans-serif;
+   font-weight: bold;
+  }
+
+  .center {
+   border-radius: 50%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border: 3px solid var(--c1);
+  }
+
+  .load1 {
+   width: 300px;
+   height: 300px;
+   border-top-color: var(--c2);
+   border-left-color: var(--c2);
+   animation: rotateClockwise 1.8s linear infinite;
+  }
+
+  .load2 {
+   width: 280px;
+   height: 280px;
+   border-right-color: var(--c3);
+   border-bottom-color: var(--c3);
+   animation: rotateCounterClockwise 1.2s linear infinite;
+  }
+
+  .load3 {
+   width: 260px;
+   height: 260px;
+   border-top-color: var(--c4);
+   border-left-color: var(--c4);
+   animation: rotateClockwise 1.4s linear infinite;
+  }
+
+  .load4 {
+   width: 240px;
+   height: 240px;
+   border-right-color: var(--c2);
+   border-bottom-color: var(--c2);
+   animation: rotateCounterClockwise 1.6s linear infinite;
+  }
+
+  .load5 {
+   width: 220px;
+   height: 220px;
+   border-top-color: var(--c5);
+   border-left-color: var(--c5);
+   animation: rotateClockwise 2s linear infinite;
+  }
+
+  .load6 {
+   width: 200px;
+   height: 200px;
+   border-right-color: var(--c3);
+   border-bottom-color: var(--c3);
+   animation: rotateCounterClockwise 2.3s linear infinite;
+  }
+
+  .text {
+   position: fixed;
+   font-size: 2.3em;
+   color: var(--c2);
+   animation: colorChange 8s 0.5s infinite;
+   font-size: 25px;
+  }
+
+  @-webkit-keyframes rotateClockwise {
+   0% {
+    transform: rotate(0deg);
+   }
+
+   100% {
+    transform: rotate(360deg);
+   }
+  }
+
+  @keyframes rotateClockwise {
+   0% {
+    transform: rotate(0deg);
+   }
+
+   100% {
+    transform: rotate(360deg);
+   }
+  }
+
+  @-webkit-keyframes rotateCounterClockwise {
+   0% {
+    transform: rotate(0deg);
+   }
+
+   100% {
+    transform: rotate(-360deg);
+   }
+  }
+
+  @keyframes rotateCounterClockwise {
+   0% {
+    transform: rotate(0deg);
+   }
+
+   100% {
+    transform: rotate(-360deg);
+   }
+  }
+
+  @-webkit-keyframes colorChange {
+   10% {
+    color: var(--c2);
+   }
+
+   20% {
+    color: var(--c3);
+   }
+
+   40% {
+    color: var(--c4);
+   }
+
+   60% {
+    color: var(--c2);
+   }
+
+   80% {
+    color: var(--c5);
+   }
+
+   90% {
+    color: var(--c3);
+   }
+
+   100% {
+    color: var(--c2);
+   }
+  }
+
+  @keyframes colorChange {
+   10% {
+    color: var(--c2);
+   }
+
+   20% {
+    color: var(--c3);
+   }
+
+   40% {
+    color: var(--c4);
+   }
+
+   60% {
+    color: var(--c2);
+   }
+
+   80% {
+    color: var(--c5);
+   }
+
+   90% {
+    color: var(--c3);
+   }
+
+   100% {
+    color: var(--c2);
+   }
+  }

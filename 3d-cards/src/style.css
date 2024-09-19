@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Dhurjati&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap');
+
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    :root {
+      --mc1: #21E6C1;
+      --mc2: #278EA5;
+      --mc3: #1F4287;
+      --mc4: #071E3D;
+    }
+
+    body {
+      background-color: #e8e8e8;
+    }
+
+    .container {
+      width: 1020px;
+      height: 600px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      width: 400px;
+      aspect-ratio: 1/1.4;
+      display: flex;
+      flex-direction: column;
+      background-color: var(--mc4);
+      border-radius: 30px;
+      overflow: hidden;
+      padding: 8px;
+      box-shadow: 2px 2px 20px var(--mc4);
+      margin: 0 10px;
+    }
+
+    .card-2 {
+      --mc1: #F05941;
+      --mc2: #BE3144;
+      --mc3: #872341;
+      --mc4: #22092C;
+    }
+
+    .card .top {
+      position: relative;
+      width: 100%;
+      height: 60%;
+      background-image: linear-gradient(to top right, var(--mc2), var(--mc1));
+      border-radius: 30px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      padding: 10px;
+    }
+
+    .card .top::before {
+      content: "";
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      border-top-left-radius: 30px;
+      left: 0;
+      top: 60px;
+      box-shadow: -11px -10px 0 10px var(--mc4);
+    }
+
+    .card .bg-top {
+      position: absolute;
+      width: 70%;
+      height: 70px;
+      right: 150px;
+      top: -10px;
+      background-color: var(--mc4);
+      border-bottom-right-radius: 30px;
+      transform: skew(-30deg);
+    }
+
+    .card .bg-top::before {
+      content: "";
+      position: absolute;
+      width: 30px;
+      height: 32px;
+      border-top-left-radius: 30px;
+      right: -30px;
+      top: 0;
+      box-shadow: -11px -11px 0 10px var(--mc4);
+    }
+
+    .top .logo {
+      width: 100%;
+      height: 60px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .top .social {
+      width: 150px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      font-size: 25px;
+    }
+
+    .top .social i {
+      transition: 0.2s;
+      cursor: pointer;
+      color: var(--m4);
+    }
+
+    .top .social i:hover {
+      transform: translateY(5px);
+      color: var(--mc3)
+    }
+
+    .top .image {
+      z-index: 10;
+      margin-left: 10px;
+    }
+
+    .top .image img {
+      width: 50px;
+    }
+
+    .card .bot {
+      width: 100%;
+      height: 40%;
+      font-family: 'Kanit', sans-serif;
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+    }
+
+    .bot .main-text {
+      color: white;
+      font-family: 'Dhurjati', sans-serif;
+      text-align: center;
+      font-size: 45px;
+      margin-bottom: 20px;
+    }
+
+    .bot .main-text span {
+      color: var(--mc1);
+    }
+
+    .bot .info {
+      display: flex;
+      justify-content: center;
+      color: white;
+    }
+
+    .bot .info>div {
+      display: flex;
+      color: white;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 25px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .bot .info>div:hover {
+      color: var(--mc1);
+    }
+
+    .bot .info>div:nth-child(2) {
+      border-left: 1px solid var(--mc1);
+      border-right: 1px solid var(--mc1);
+    }
+
+    .bot .info>div span:nth-child(1) {
+      font-size: 25px;
+    }
+
+    .bot .info>div span:nth-child(2) {
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .card-image {
+      position: inherit;
+      height: 260px;
+      perspective: 1000px;
+      transform-style: preserve-3d;
+      transform: rotateY(0deg) rotateZ(0deg) rotateX(0deg);
+      transition: 0.5s;
+      /* background-image: radial-gradient(var(--mc1) 10%, var(--mc4) 100%); */
+      border-radius: 30px;
+    }
+
+    .card-image:hover {}
+
+    .card-image img {
+      position: absolute;
+    }
+
+    .card-image .sky {
+      width: 100%;
+      top: 0;
+      right: 0px;
+      transform-style: preserve-3d;
+      transform: translateZ(-30px);
+      z-index: 10;
+    }
+
+    .card-2 .card-image .sky {
+      width: 100%;
+      top: -30px;
+      right: 0px;
+      transform-style: preserve-3d;
+      transform: translateZ(-30px);
+      z-index: 10;
+    }
+
+    .card-image .moon {
+      width: 100px;
+      top: 0;
+      right: 0px;
+      transform-style: preserve-3d;
+      transform: translateZ(-10px);
+      z-index: 11;
+    }
+
+    .card-image .ninja {
+      width: 80%;
+      top: 50%;
+      left: 50%;
+      transform-style: preserve-3d;
+      transform: translate3d(-50%, -50%, 30px);
+}

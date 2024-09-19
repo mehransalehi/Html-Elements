@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap');
+  :root{
+   --bg : #212121;
+   --c1 : #9BE8D8;
+   --c2 : #45CFDD;
+   --c3 : #99DBF5;
+   --c4 : #A7ECEE;
+   --c5 : #9AC5F4;
+   --c6 : #A7EDE7;
+  }
+  body{
+   background-color: var(--bg);
+  }
+  .container{
+   top:50%;left:50%;
+   position: absolute;
+   transform: translate(-50%,-50%);
+   width:500px;
+   height:500px;
+  }
+  .circle{
+   top:50%;left:50%;
+   position: absolute;
+   transform: translate(-50%,-50%);
+   width:80%;height:80%;
+   border:40px solid var(--c1);
+   border-radius: 50%;
+   transform-origin: 45% 45%;
+
+   animation-iteration-count: infinite;
+   animation-timing-function: linear;
+  }
+  .c1,.c2{
+   opacity: 0.4;
+   transform-origin: 48% 48%;
+   animation-name: rotateC1;
+   animation-duration: 4s;
+  }
+  .c3,.c4{
+   opacity: 0.5;
+   transform-origin: 48% 48%;
+   animation-name: rotateC2;
+   animation-duration: 3s;
+  }
+  .c5,.c6{
+   opacity: 0.2;
+   transform-origin: 47% 47%;
+   animation-name: rotateC1;
+   animation-duration: 2s;
+  }
+  .c1{
+   border-color: var(--c1);
+   animation-delay: 0.2s;
+  }
+  .c2{
+   border-color: var(--c2);
+   animation-delay: 0.5s;
+  }
+  .c3{
+   border-color: var(--c3);
+   animation-delay: 0.8s;
+  }
+  .c4{
+   border-color: var(--c4);
+   animation-delay: 1.2s;
+  }
+  .c5{
+   border-color: var(--c5);
+   animation-delay: 1.5s;
+  }
+  .c6{
+   border-color: var(--c6);
+   animation-delay: 1.8s;
+  }
+  @keyframes rotateC1 {
+   0%{
+    transform: translate(-50%,-50%) rotate(0deg);
+    border-width: 40px;
+   }
+   50%{
+    transform: translate(-50%,-50%) rotate(180deg);
+    border-width: 20px;
+   }
+   to{
+    transform: translate(-50%,-50%) rotate(360deg);
+    border-width: 40px;
+   }
+  }
+  @keyframes rotateC2 {
+   0%{
+    transform: translate(-50%,-50%) rotate(360deg);
+    border-width: 40px;
+   }
+   50%{
+    transform: translate(-50%,-50%) rotate(180deg);
+    border-width: 50px;
+   }
+   to{
+    transform: translate(-50%,-50%) rotate(0deg);
+    border-width: 40px;
+   }
+  }
+  .text{
+   color: white;
+   top:48%;left:48%;
+   position: absolute;
+   transform: translate(-50%,-50%);
+   font-family: 'Rubik Wet Paint', cursive;
+   font-size: 400%;
+  }
+
+
+
+a{
+  color:white;
+  font-size:30px;
+}

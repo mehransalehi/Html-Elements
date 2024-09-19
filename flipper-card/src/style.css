@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;600&display=swap');
+  :root{
+   --bg : #e8e8e8;
+   --c1 : #7C73C0;
+   --c2 : #94ADD7;
+   --c3 : #ACFADF;
+   --c4 : #E8FFCE;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  body{
+   background-color:var(--bg);
+   font-family: 'Quicksand', sans-serif;
+  }
+  .container{
+   position: absolute;
+   top:50%;left:50%;
+   transform: translate(-50%,-50%);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+  }
+  .card{
+   width:300px;
+   height:200px;
+   position: relative;
+   perspective: 900px;
+  }
+  .card .card-top{
+   position:absolute;
+   top:0;
+   width:100%;
+   height:100%;
+   z-index:1;
+   background-color: var(--c3);
+  }
+  .card .card-bot{
+   position:absolute;
+   top:0;
+   width:100%;
+   height:100%;
+   z-index:100;
+   transform-origin: bottom;
+   transform-style: preserve-3d;
+   transition: all 0.5s ease;
+  }
+  .card-bot-front,.card-bot-back{
+   height:100%;width:100%;
+   position: absolute;
+   top:0;left:0;
+   backface-visibility: hidden;
+  }
+  .card-bot-front {
+   background-color: var(--c4);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.062);
+   background-position: center center;
+   background-size: cover;
+  }
+  .total-info{
+   width:100%;height:100%;
+   color:var(--c1);
+   font-size:10px;
+   padding:10px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+  }
+
+  .card-bot-back {
+   background-color: white;
+   transform: rotateX(180deg);
+   background-image: linear-gradient(var(--c3), var(--c4));
+   display: flex;
+   justify-content: center;
+   align-items: flex-end;
+   padding-bottom: 10px;
+  }
+
+  .card:hover .card-bot{
+   transform: rotateX(-180deg);
+  }
+  .card:hover .card-bot-front{
+   box-shadow: unset;
+  }
+  .total-info h1{
+   margin-bottom:10px;
+  }
+  .total-info h2{
+   color:var(--c2);
+  }
+  .total-info i{
+   font-size:30px;
+   margin-bottom:10px;
+  }
+  .button {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 3px;
+   letter-spacing: 1px;
+   cursor: pointer;
+   border: none;
+   background: #fff;
+   padding:15px;
+   margin-top:15px;
+   color:var(--c1);
+  }
+  .details-top{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding:20px;
+   color:var(--c1);
+   padding-bottom: 0 !important;
+   transform: translateY(50px);
+   opacity: 0;
+  }
+  .details-top i{
+   font-size: 25px;
+  }
+
+  .details-mid{
+   padding:20px;
+   color:var(--c1);
+   transform: translateY(50px);
+   opacity: 0;
+  }
+  .details-mid h1{
+   font-size:20px;
+   margin-bottom:5px;
+  }
+  .details-mid p{
+   font-size:15px;
+  }
+  .card-bot-back img{
+   position: absolute;
+   left:50%;
+   top:-38px;
+   transform: translateX(-150%) rotate(0);
+   opacity: 0;
+   aspect-ratio: 1;
+   width:200px;
+  }
+  .card-bot-back button{
+   transform: translateY(50px);
+   opacity: 0;
+  }
+  .card:hover .details-top,.card:hover .details-mid{
+   animation-name: fadeInTop;
+   animation-duration: 0.5s;
+   animation-delay: 0.5s;
+   animation-iteration-count: 1;
+   animation-fill-mode: forwards;
+   transform: translateY(30px);
+  }
+  .card:hover .card-bot-back img{
+   animation-name: rotateIn;
+   animation-duration: 0.5s;
+   animation-delay: 0.9s;
+   animation-iteration-count: 1;
+   animation-fill-mode: forwards;
+  }
+  .card:hover .card-bot-back button{
+   animation-name: fadeInTop;
+   animation-duration: 0.5s;
+   animation-delay: 1.1s;
+   animation-iteration-count: 1;
+   animation-fill-mode: forwards;
+   transform: translateY(30px);
+  }
+  .card:hover .details-mid{
+   animation-delay: 0.7s;
+  }
+  @keyframes fadeInTop {
+   from{
+    transform: translateY(50px);
+    opacity: 0;
+   }
+   to{
+    transform: translateY(0px);
+    opacity: 1;
+   }
+  }
+  @keyframes rotateIn {
+   from{
+    transform: translateX(-150%) rotate(0);
+    opacity: 0;
+   }
+   to{
+    transform: translateX(-45%) rotate(30deg);
+    opacity: 1;
+   }
+  }

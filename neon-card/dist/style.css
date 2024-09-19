@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+  :root{
+   --bg : #212121;
+   --c1 : #F266AB;
+   --c2 : #2CD3E1;
+  }
+  *{
+   box-sizing: border-box;
+  }
+  body{
+   background-color:var(--bg);
+  }
+  .container{
+   position:absolute;
+   left:50%;top:50%;
+   transform: translate(-50%,-50%);
+   width: 750px;
+   height: 750px;
+   perspective: 2000px;
+  }
+  .line{
+   position: absolute;
+   top:25%;left:25%;
+    height:0%;
+    width:0%;
+   border-left: 4px solid var(--c2);
+   border-bottom: 4px solid var(--c2);
+   transform-style: preserve-3d;
+   transform-origin: top left;
+   transform: translateX(-50%)  translateY(calc(var(--i) * 6.5px)) rotateX(30deg) rotateZ(-40deg);
+   opacity: calc(100% - calc(var(--i) * 12%));
+   filter: blur(calc(var(--i) * 0.45px));
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   padding:0px;
+   animation-name: showLine;
+   animation-duration: 5s;
+   animation-timing-function: linear;
+   animation-fill-mode:forwards;
+   animation-iteration-count: 1;
+  }
+  .line .text{
+   width:100%;
+   font-family: 'Lilita One', cursive;
+   font-size: 114px;
+   -webkit-text-fill-color: #ffffff00;
+   -webkit-text-stroke-width: 4px;
+   -webkit-text-stroke-color: var(--c1);
+   opacity:0;
+  }
+  .line .text1{
+   animation: showText 0.5s linear calc(5s + var(--i) * 0.2s) 1 forwards;
+  }
+  .line .text2{
+   animation: showText 0.5s linear calc(6.4s + calc(var(--i) * 0.2s)) 1 forwards;
+  }
+  .line .text3{
+   animation: showText 0.5s linear calc(7.8s + calc(var(--i) * 0.2s)) 1 forwards;
+  }
+  .line .text4{
+   animation: showText 0.5s linear calc(9.2s + calc(var(--i) * 0.2s)) 1 forwards;
+  }
+  @keyframes showLine {
+   0%{
+    height:0%;
+    width:0%;
+    padding:0px;
+   }50%{
+    height:100%;
+    width:0%;
+    padding:0px;
+   }99%{
+    height:100%;
+    width:100%;
+    padding:0px;
+   }100%{
+    height:100%;
+    width:100%;
+    padding:50px;
+   }
+  }
+  @keyframes showText {
+   0%{
+    opacity: 0;
+   }100%{
+    opacity: 1;
+   }
+}

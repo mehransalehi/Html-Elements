@@ -1,0 +1,64 @@
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      height: 100svh;
+      display: grid;
+      place-items: center;
+    }
+
+    .gallery {
+      position: relative;
+      width: 760px;
+      height: 305px;
+    }
+
+    .gallery:hover :not(div[data-pos="0"], img) {
+      cursor: pointer;
+    }
+
+    .gallery .item {
+      position: absolute;
+      width: 175px;
+      height: 150px;
+      overflow: hidden;
+      transition: transform 0.9s, width 0.9s, height 0.9s;
+
+
+    }
+
+    .item img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .gallery div[data-pos="0"] {
+      width: 400px;
+      height: inherit;
+      z-index: 10;
+    }
+
+    div[data-pos="0"] {
+      transform: translate(0, 0);
+    }
+
+    div[data-pos="1"] {
+      transform: translate(405px, 0);
+    }
+
+    div[data-pos="2"] {
+      transform: translate(585px, 0);
+    }
+
+    div[data-pos="3"] {
+      transform: translate(405px, 155px);
+    }
+
+    div[data-pos="4"] {
+      transform: translate(585px, 155px);
+}

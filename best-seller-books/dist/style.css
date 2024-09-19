@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+  body{
+   font-family: 'Permanent Marker', cursive;
+   background-color: white;
+   color:#212121;
+  }
+  .container{
+   position: absolute;
+   left:50%;top:10%;
+   transform: translate(-50%,0%);
+   display: flex;
+   flex-direction: column;
+  }
+  .row{
+   width:600px;
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   padding:20px;
+  }
+  .col{
+   padding:0px 30px;
+   perspective: 1000px; 
+  }
+  .book{
+   width: 150px;
+   height:200px;
+   transform-style: preserve-3d;
+   transform: rotateX(45deg);
+   position: relative;
+   background-image:url('https://www.uplooder.net/img/image/26/c8c4824530c80e73e4b09fd8b693a58c/1.jpg');
+   background-size: cover;
+   transition: all .5s linear;
+   cursor: pointer;
+  }
+  .b2{
+   background-image:url('https://www.uplooder.net/img/image/79/9c84cce03134754c96e000d1ec9c77ed/2.jpg');
+  }
+  .b3{
+   background-image:url('https://www.uplooder.net/img/image/93/6b52f04c39f6d9e8437452f3192a318b/3.jpg');
+  }
+  .b4{
+   background-image:url('https://www.uplooder.net/img/image/30/8f3dd8a51cb59d49e180e010627fbd6a/4.jpg');
+  }
+  .b5{
+   background-image:url('https://www.uplooder.net/img/image/63/3cb47e0c03e986fa0ba237e214139e9a/5.jpg');
+  }
+  .b6{
+   background-image:url('https://www.uplooder.net/img/image/12/3f4f611f9a2f174649df7633a1beb5f9/6.jpg');
+  }
+  .b7{
+   background-image:url('https://www.uplooder.net/img/image/11/6eb04dc43f94e0af273375bdf505520a/7.jpg');
+  }
+  .b8{
+   background-image:url('https://www.uplooder.net/img/image/17/dba82bfa2270f77568b7173aca7e3b2f/8.jpg');
+  }
+  .b9{
+   background-image:url('https://www.uplooder.net/img/image/65/9b1a99168dbb85c11e8d720fabd83092/9.jpg');
+  }
+  .book:hover{
+   transform: scale(1.2) rotateX(10deg);
+  }
+  .book::after{
+   content: "";
+   width:100%;
+   height:30px;
+   position:absolute;
+   left:0;
+   bottom:0;
+   transform: rotateX(90deg);
+   transform-origin: bottom;
+   background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1));
+  }

@@ -1,0 +1,71 @@
+:root{
+   --c1 : #071952;
+   --c2 : #0B666A;
+   --c3 : #35A29F;
+   --c4 : #97FEED;
+  }
+  body{
+   background-color:var(--c1);
+  }
+  .container{
+   width:500px;
+   position:absolute;
+   top:50%;left:50%;
+   transform: translate(-50%,-50%);
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+  }
+  .icon{
+   position: relative;
+   width:60px;
+   height:60px;
+   transition: all 0.3s;
+  }
+  .icon:hover{
+   transform: rotate(-35deg) skew(20deg);
+  }
+  .icon > span{
+   position: absolute;
+   left:0;top:0;
+   width:100%;height:100%;
+   border:1px solid var(--c4);
+   border-radius: 10px;
+   opacity: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   transition: all 0.3s;
+   color:var(--c4);
+   font-size: 32px;
+   cursor: pointer;
+  }
+  .icon > span:nth-child(1){
+   opacity: 1;
+  }
+  .icon:hover > span:nth-child(1){
+   transform: translate(20px,-20px);
+   color:var(--c4);
+  }
+  .icon:hover > span:nth-child(2){
+   transform: translate(15px,-15px);
+   opacity: 0.8;
+   color:var(--c3);
+  }
+  .icon:hover > span:nth-child(3){
+   transform: translate(10px,-10px);
+   opacity: 0.6;
+   color:var(--c2);
+  }
+  .icon:hover > span:nth-child(4){
+   transform: translate(5px,-5px);
+   opacity: 0.4;
+  }
+  .icon:hover > span:nth-child(5){
+   opacity: 0.2;
+  }
+
+a{
+  color:white;
+  font-size:30px;
+}

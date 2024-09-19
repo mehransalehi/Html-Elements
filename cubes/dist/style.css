@@ -1,0 +1,87 @@
+:root{
+            --size : 50px;
+            --front : #f2f2f2;
+            --side : #999999;
+            --top : #d9d9d9;
+            --glow1 : #ff2266aa;
+            --bg1 : #ff2266;
+            --glow2 : #d92257aa;
+            --bg2 : #d92257;
+            --glow3 : #b22247aa;
+            --bg3 : #b22247;
+        }
+        body{
+            background-color: #212121;
+        }
+        .container{
+            position:absolute;
+            width:800px;
+            height:800px;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            perspective: 5000px;
+        }
+        .cube{
+            position:absolute;
+            top:40%;
+            left: 40%;
+
+            transform-style: preserve-3d;
+            --gapx : calc(calc(var(--size)/4) * var(--x));
+            --gapy : calc(calc(var(--size)/4) * var(--y));
+            --gapz : calc(calc(var(--size)/4) * var(--z));
+            transform: rotateX(-30deg) rotateY(30deg) 
+                translate3d(
+                            calc(calc(var(--size) * var(--x)) + var(--gapx)),
+                            calc(calc(var(--size) * var(--y)) + var(--gapy)),
+                            calc(calc(var(--size) * var(--z)) + var(--gapz))
+                            );
+            width:var(--size);
+            height:var(--size);
+        }
+        .cube > div{
+            position:absolute;
+            width:100%;
+            height:100%;
+            filter: blur(1px);
+            border-radius: 5px;
+            transition: all 6s;
+        }
+        .front{
+            transform: translateZ(calc(var(--size)/2)) translateY(-2px) ;
+            background-color:var(--front);
+        }
+        .back{
+            transform: rotateY(180deg) translateZ(calc(var(--size)/2));
+        }
+        .top{
+            transform: rotateX(90deg) translateZ(calc(var(--size)/2));
+            background-color:var(--top);
+        }
+        .bottom{
+            transform: rotateX(-90deg) translateZ(calc(var(--size)/2));
+        }
+        .right{
+            transform: rotateY(90deg) translateZ(calc(var(--size)/2));
+        }
+        .left{
+            transform: rotateY(-90deg) translateZ(calc(var(--size)/2))  translateY(-2px);
+            background-color:var(--side);
+        }
+
+        .cube:hover .front{
+            box-shadow: 8px 8px 20px var(--glow1);
+            background-color:var(--bg1);
+            transition: all 0.2s;
+        }
+        .cube:hover .top{
+            box-shadow: 8px -8px 20px var(--glow2);
+            background-color:var(--bg2);
+            transition: all 0.2s;
+        }
+        .cube:hover .left{
+            box-shadow: -8px 8px 20px var(--glow3);
+            background-color:var(--bg3);
+            transition: all 0.2s;
+}

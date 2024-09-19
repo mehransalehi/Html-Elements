@@ -1,0 +1,58 @@
+:root{
+   --size : 3px;
+  }
+  body{
+   background-color : #111;
+   overflow: hidden;
+  }
+  .container{
+   position:absolute;
+   top:50%;left:50%;
+   transform: translate(-50%,-50%);
+   width: 1100px;
+   height:1100px;
+  }
+  h1{
+   color:white;
+   position: absolute;
+   top:50%;left:50%;
+   transform: translate(-50%,-50%);
+   font-size:25px;
+  }
+  .line{
+   position: absolute;
+   top: 58%;
+   left: 56.5%;
+   transform-style: preserve-3d;
+   perspective: 1000px;
+   transform-origin: -70px -70px;
+   transform: translate(-50%,-50%) rotateZ(calc(var(--j) * 10deg));
+  }
+  .dot{
+   position: absolute;
+   border-radius: 50%;
+   background-color:orange;
+   width:calc(var(--i) * var(--size));
+   height:calc(var(--i) * var(--size));
+   animation: stre 6s linear calc(var(--j)*0.04s) infinite;
+  }
+  @keyframes stre {
+   0%{
+    top:calc(calc(var(--i) * var(--i)) * 2px);
+   }
+   20%{
+    top:calc(calc(var(--i) * var(--i)) * 4px);
+   }
+   40%{
+    top:calc(calc(var(--i) * var(--i)) * 6px);
+   }
+   60%{
+    top:calc(calc(var(--i) * var(--i)) * 8px);
+   }
+   80%{
+    top:calc(calc(var(--i) * var(--i)) * 10px);
+   }
+   100%{
+    top:calc(calc(var(--i) * var(--i)) * 12px);
+   }
+  }

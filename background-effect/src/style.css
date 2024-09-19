@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+  body{
+   background-color:#212121;
+  }
+  .container{
+   position: absolute;
+   left:50%;
+   top:50%;
+   transform: translate(-50%,-50%);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+  }
+  .text{
+   color:transparent;
+   background-clip: text;
+   background-size: contain;
+   background-position: top left;
+   font-size: 150px;
+   filter: drop-shadow(2px 2px 2px black) drop-shadow(-2px -2px 2px black);
+  }
+  .bg1{
+   background-image: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzZpOGZidGJ6MW53dXg4MGE4eWJpem5zYnptbnlwamp2bDA5OGdtNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/cmegx6SssTKmEFEcwj/giphy.gif');
+   font-family: 'Rowdies', cursive;
+  }
+  .bg2{
+   background-image: url('https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHRwNDd3bHpnNjQwNjFtNWZxd21xc3BmOHgxeDA4cnYzbDNrZWNxbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7AtHoQ9XWbpwLRxs0t/giphy.gif');
+   font-family: 'Archivo Black', sans-serif;
+  }
+  .bg3{
+   background-image: url('https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmV6YnpuM2ZmYXk5bnFjOGU0dmFhcWUzYmM0amljMmJhZms3NTliMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/U3qYN8S0j3bpK/giphy.gif');
+   font-family: 'Permanent Marker', cursive;
+   filter: drop-shadow(2px 2px 2px white) drop-shadow(-2px -2px 2px white);
+  }
+  .bg4{
+   background-image: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGl6OTJya2owYW50cXRyZTAyd2F2Y3ZwZG1kYm9qaWc3dmJrOGdzdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/BfWLUK9MyFVRK/giphy.gif');
+   font-family: 'Russo One', sans-serif;
+  }
+  .bg5{
+   background-image: url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbm40cGY3N29nb2o2c3A3aXV3dDJpaThubzNwNWgyNDBzeDc1MXcxMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/dwaeIbBnF6HBu/giphy.gif');
+   font-family: 'Archivo Black', sans-serif;
+}

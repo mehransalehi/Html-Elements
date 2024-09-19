@@ -1,0 +1,79 @@
+* {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    .container {
+      --size: 100px;
+      --gap: 10px;
+      position: absolute;
+      width: calc(var(--size) * 6);
+      height: calc(var(--size) * 4);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -60%);
+    }
+
+    img {
+      width: calc(var(--size) * 2);
+      height: calc(var(--size) * 2);
+
+      object-fit: cover;
+      clip-path: path("M90,10 C100,0 100,0 110,10 190,90 190,90 190,90 200,100 200,100 190,110 190,110 110,190 110,190 100,200 100,200 90,190 90,190 10,110 10,110 0,100 0,100 10,90Z");
+      position: absolute;
+
+      transform: translate(0%, 0%);
+      transition: all 0.5s;
+    }
+
+
+    img:nth-child(1) {
+      top: 0;
+      left: 0;
+    }
+
+    img:nth-child(2) {
+      top: 0;
+      left: calc(var(--size) * 2);
+    }
+
+    img:nth-child(3) {
+      top: 0;
+      left: calc(var(--size) * 4);
+    }
+
+    img:nth-child(4) {
+      top: calc(var(--size) + var(--gap));
+      left: calc(var(--size) * 1);
+    }
+
+    img:nth-child(5) {
+      top: calc(var(--size) + var(--gap));
+      left: calc(var(--size) * 3);
+    }
+
+    img:nth-child(6) {
+      left: 0;
+      top: calc(calc(var(--size) *2) + calc(var(--gap) *2));
+    }
+
+    img:nth-child(7) {
+      top: calc(calc(var(--size) *2) + calc(var(--gap) *2));
+      left: calc(var(--size) * 2);
+    }
+
+    img:nth-child(8) {
+      top: calc(calc(var(--size) *2) + calc(var(--gap) *2));
+      left: calc(var(--size) * 4);
+    }
+
+    img:hover {
+      clip-path: path("M0,0 C0,0 200,0 200,0 200,0 200,100 200,100 200,100 200,200 200,200 200,200 100,200 100,200 100,200 100,200 0,200 0,200 0,100 0,100 0,100 0,100 0,100Z");
+      z-index: 1;
+      transition: clip-path 0.25s, filter 0.25s;
+    }
+
+    .container:hover img:not( :hover) {
+      filter: blur(5px);
+}

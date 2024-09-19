@@ -1,0 +1,322 @@
+@import url("https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap");
+
+$co1: #520580;
+$co2: #2d0347;
+$co3: #1b022b;
+
+$bulb-color: #ffff82;
+$bulb-color-off : #ffffffa0;
+$sc: #1c1570;
+$sc1: #160559;
+$sc3: #0f003d;
+$lc: #63059c;
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: radial-gradient(circle, $co1 0%, $co2 34%, $co3 65%, black 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1055%26quot%3b)' fill='none'%3e%3cpath d='M987.865%2c643.629C1028.126%2c645.159%2c1068.678%2c629.095%2c1089.392%2c594.537C1110.634%2c559.098%2c1107.055%2c514.814%2c1086.591%2c478.92C1065.919%2c442.661%2c1029.546%2c414.276%2c987.865%2c416.459C948.864%2c418.502%2c923.603%2c453.765%2c905.561%2c488.402C889.202%2c519.809%2c882.292%2c556.009%2c898.88%2c587.295C916.505%2c620.537%2c950.266%2c642.2%2c987.865%2c643.629' fill='rgba(97%2c 1%2c 155%2c 0.71)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M716.25 554.22 a139.34 139.34 0 1 0 278.68 0 a139.34 139.34 0 1 0 -278.68 0z' fill='rgba(97%2c 1%2c 155%2c 0.71)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1254.41 424.73 a180.19 180.19 0 1 0 360.38 0 a180.19 180.19 0 1 0 -360.38 0z' fill='rgba(97%2c 1%2c 155%2c 0.71)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1167.2 71.35 a97.94 97.94 0 1 0 195.88 0 a97.94 97.94 0 1 0 -195.88 0z' fill='rgba(97%2c 1%2c 155%2c 0.71)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M-137.27 463.21 a158.27 158.27 0 1 0 316.54 0 a158.27 158.27 0 1 0 -316.54 0z' fill='rgba(97%2c 1%2c 155%2c 0.71)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M791.41 273.4 a176.69 176.69 0 1 0 353.38 0 a176.69 176.69 0 1 0 -353.38 0z' fill='rgba(97%2c 1%2c 155%2c 0.71)' class='triangle-float1'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1055'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container {
+    display: flex;
+    width: 1100px;
+    flex-direction: row-reverse;
+}
+
+.frame {
+    position: relative;
+    width: 53%;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: -90px;
+}
+
+.headers {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+    color: white;
+    font-family: "Radio Canada Big", sans-serif;
+    padding-left: 60px;
+    .btn-container {
+        transform: translateX(-800px);
+        transition: 0.5s 0.6s;
+    }
+    h1 {
+        transition: 0.5s;
+        transform: translateX(-800px);
+        font-size: 4rem;
+        margin: 0;
+    }
+    h2 {
+        transition: 0.5s 0.3s;
+        transform: translateX(-800px);
+        font-size: 2rem;
+        margin: 20px 0;
+    }
+    p {
+        transition: 0.5s 0.5s;
+        transform: translateX(-800px);
+        margin: 0;
+        margin-bottom: 20px;
+    }
+}
+
+main.turnon {
+    .headers {
+        h1 {
+            transform: translateX(0px);
+            font-size: 4rem;
+            margin: 0;
+        }
+        h2 {
+            transform: translateX(0px);
+            font-size: 2rem;
+            margin: 20px 0;
+        }
+        p {
+            transform: translateX(0px);
+            margin: 0;
+            margin-bottom: 20px;
+        }
+        .btn-container {
+            transform: translateX(0px);
+        }
+    }
+    
+    .bulb {
+        width: 2.6rem;
+        height: 2.6rem;
+        border-radius: 50%;
+        background: $bulb-color;
+        filter: blur(1px);
+        transform: translate(-83px, 95px);
+        box-shadow: 3px 3px 45px 13px $bulb-color;
+    }
+    .light {
+        position: absolute;
+        transform: translate(-83px);
+        opacity: 0.5;
+        background: $lc;
+        width: 8rem;
+        height: 18rem;
+        clip-path: polygon(30% 0, 70% 0, 100% 100%, 0 100%);
+        z-index: -1;
+    }
+    
+    .light-circle {
+        opacity: 0.5;
+        background: $lc;
+        width: 8rem;
+        height: 2rem;
+        border-radius: 50%;
+        position: absolute;
+        bottom: -15px;
+        left: -47px;
+    }
+    
+    .shadow {
+        position: absolute;
+        bottom: -20px;
+        width: 12rem;
+        height: 2rem;
+        background: $sc3;
+        border-radius: 50%;
+        z-index: -2;
+        transform: skew(35deg);
+    }
+}
+
+.light-wrapper {
+    position: relative;
+    height: 100%;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.bulb {
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 50%;
+    background: $bulb-color-off;
+    filter: blur(1px);
+    transform: translate(-83px, 95px);
+    transition:0.5s;
+    cursor: pointer;
+
+    &:hover{
+        box-shadow: 3px 3px 55px 5px $bulb-color-off;
+    }
+}
+.light {
+    position: absolute;
+    transform: translate(-83px);
+    opacity: 0;
+    background: transparent;
+    width: 8rem;
+    height: 18rem;
+    clip-path: polygon(30% 0, 70% 0, 100% 100%, 0 100%);
+    z-index: -1;
+    transition:0.5s;
+}
+
+.light-circle {
+    opacity: 0;
+    background: transparent;
+    width: 8rem;
+    height: 2rem;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -15px;
+    left: -47px;
+    transition:0.5s;
+}
+
+.shadow {
+    position: absolute;
+    bottom: -20px;
+    width: 12rem;
+    height: 2rem;
+    background: transparent;
+    border-radius: 50%;
+    z-index: -2;
+    transform: skew(35deg);
+    transition:0.5s;
+}
+
+.arch {
+    border: 12px solid $sc;
+    border-bottom: none;
+    width: 6rem;
+    height: 3rem;
+    border-radius: 50% 50% 0 0;
+    transform: translatex(-42px);
+}
+
+.arch:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: $sc1;
+    width: 2rem;
+    height: 0.7rem;
+    border-radius: 10px 10px 0 0;
+    transform: translate(-62px, 10px);
+    z-index: 13;
+}
+
+.top {
+    width: 12px;
+    height: 3rem;
+    background: $sc;
+}
+
+.middle {
+    width: 1.5rem;
+    height: 10rem;
+    background: $sc;
+    box-shadow: inset 3px 3px 10px $sc3;
+
+    &:before {
+        content: "";
+        position: absolute;
+        background: $sc1;
+        width: 2rem;
+        height: 0.8rem;
+        border-radius: 15px;
+        transform: translate(-3px, -2px);
+    }
+}
+
+.bottom {
+    width: 3rem;
+    height: 7rem;
+    background: $sc;
+    z-index: -1;
+    box-shadow: inset 3px 3px 10px $sc3;
+
+    &:before {
+        content: "";
+        position: absolute;
+        background: $sc1;
+        width: 3.5rem;
+        height: 1rem;
+        border-radius: 15px;
+        transform: translate(-3px, -2px);
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        background: $sc1;
+        width: 4.5rem;
+        height: 1.2rem;
+        border-radius: 15px 15px 0 0;
+        transform: translate(-12px);
+    }
+}
+
+button {
+    font-size: 0.8em;
+    padding: 0.6em 0.8em;
+    border-radius: 0.5em;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 2px 2px 3px #000000b4;
+}
+
+.btn-container {
+    position: relative;
+    padding: 3px;
+    background: linear-gradient(90deg, #03a9f4, #f441a5);
+    border-radius: 0.9em;
+    transition: all 0.4s ease;
+
+    &:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        border-radius: 0.9em;
+        z-index: -10;
+        filter: blur(0);
+        transition: filter 0.4s ease;
+    }
+    &:hover:before {
+        background: linear-gradient(90deg, #03a9f4, #f441a5);
+        filter: blur(1.2em);
+    }
+    &:active::before {
+        filter: blur(0.2em);
+    }
+}
+

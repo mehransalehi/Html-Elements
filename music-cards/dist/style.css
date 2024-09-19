@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;500&display=swap');
+   body{
+     background-color: #e8e8e8;
+     font-family: 'Raleway', sans-serif;
+   }
+  .container {
+    position: absolute;
+    top:20%;
+    left:50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    width:900px;
+    padding-right:50px;
+    padding-left:50px;
+  }
+  h2{
+    margin:0;
+  }
+  .headline{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .line{
+    height:5px;
+    background-color: #6F61C0;
+    flex-grow: 1;
+    margin-left:10px;
+  }
+  .row{
+    width:100%;
+    display: flex;
+    padding-top:40px;
+    justify-content: center;
+  }
+  .col{
+    padding:10px;
+    margin:10px;
+  }
+  .card {
+    width: 200px;
+    height: 254px;
+    border-radius: 30px;
+    box-shadow: 15px 15px 30px #bebebe,
+             -15px -15px 30px #ffffff;
+    transition: all 0.4s;
+    cursor: pointer;
+    background-image: url('https://www.uplooder.net/img/image/16/cb19f7f5c2fb37755b1f23761d714ed4/1.jpg');
+    background-position: center center;
+    background-size: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+  }
+  .b2{
+    background-image: url('https://www.uplooder.net/img/image/47/93149e87c9a0e1d4e4a7835f1ba5d971/2.jpg');
+  }
+  .b3{
+    background-image: url('https://www.uplooder.net/img/image/76/12413c6ff32e1d7b8345d32837e88a31/3.jpg');
+  }
+  .b4{
+    background-image: url('https://www.uplooder.net/img/image/37/1151d65074a5726c27bc325569668cc0/4.jpg');
+  }
+  .card:hover {
+    box-shadow:  0 0 0 4px #6F61C0, 
+                0 0 0 8px #D5FFE4, 
+                0 0 0 12px #8BE8E5,
+                0 0 0 16px #A084E8;
+    color: #fff;
+    background-size: 130%;
+    background-position: left center;
+  }
+  button {
+    font-family: monospace;
+    background-color: #f3f7fe;
+    color: #3b82f6;
+    border: none;
+    border-radius: 8px;
+    width: 100px;
+    height: 45px;
+    transition: .3s;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  button:hover {
+    background-color: #3b82f6;
+    box-shadow: 0 0 0 5px #3b83f65f;
+    color: #fff;
+  }
+  .card:hover button{
+    opacity: 1;
+    transform: translateY(50%);
+  }
+  .icons{
+    position: absolute;
+    top:0%;
+    left:0;
+    height:60%;
+    width:50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color:white;
+    transform: translateX(-100%);
+    font-size: 25px;
+    transition: .3s;
+    opacity: 0;
+  }
+  .card:hover .icons{
+    opacity: 1;
+    transform: translateX(0%);
+  }
+  .icons i:hover{
+    cursor: pointer;
+    color:#8BE8E5;
+  }

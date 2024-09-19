@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+  :root{
+   --bg : #18181B;
+   --border-color : rgba(255, 255, 255, 0.1);
+   --shadow : rgba(0, 0, 0, 0.2);
+   --text-color:white;
+   --mc : #2f5c4f96;
+   --mcf : #0db887;
+  }
+  *{
+   box-sizing: border-box;
+   padding:0;
+   margin:0;
+  }
+  body{
+   background-color:var(--bg);
+   font-family: 'PT Sans', sans-serif;
+  }
+  .container{
+   position:absolute;
+   left:50%;top:50%;
+   transform: translate(-50%,-50%);
+   width:600px;
+   height:300px;
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+  }
+  .card{
+   position: relative;
+   width:250px;
+   height:100%;
+   border:1px solid var(--border-color);
+   border-radius: 10px;
+   box-shadow: 2px 2px 2px var(--shadow), -2px -2px 2px var(--shadow);
+   transition: box-shadow 0.25s;
+   overflow: hidden;
+   cursor: pointer;
+  }
+  .card:hover{
+   box-shadow: 2px 2px 20px var(--shadow), -2px -2px 20px var(--shadow);
+  }
+  .card .bg{
+   display: flex;
+   flex-wrap: wrap;
+   width:100%;
+   height:100%;
+  }
+  .card .tile{
+   width:33.33%;
+   height:25%;
+   border-bottom : 1px solid var(--border-color);
+   border-right : 1px solid var(--border-color);
+   background-color:var(--bg);
+   transition: all 0.5s;
+  }
+  .card:hover .tile{
+   animation-duration: 10s;
+   animation-timing-function: linear;
+   animation-iteration-count: infinite;
+  }
+
+  .card .tile:nth-child(3),
+  .card .tile:nth-child(6),
+  .card .tile:nth-child(9),
+  .card .tile:nth-child(12){
+   border-right-width: 0px;
+  }
+  .card .tile:nth-child(10),
+  .card .tile:nth-child(11),
+  .card .tile:nth-child(12){
+   border-bottom-width: 0px;
+  }
+
+  .card:hover .tile:nth-child(1),
+  .card:hover .tile:nth-child(6),
+  .card:hover .tile:nth-child(8){
+   animation-name: changeBg1;
+  }
+
+  .card:hover .tile:nth-child(2),
+  .card:hover .tile:nth-child(4),
+  .card:hover .tile:nth-child(9){
+   animation-name: changeBg2;
+  }
+
+  .card:hover .tile:nth-child(5),
+  .card:hover .tile:nth-child(7),
+  .card:hover .tile:nth-child(3){
+   animation-name: changeBg3;
+  }
+  @keyframes changeBg1 {
+   0%{
+    background-color:var(--bg);
+   }16.5%{
+    background-color: var(--mc);
+   }37%{
+    background-color:var(--bg);
+   }100%{
+    background-color:var(--bg);
+   }
+  }
+  @keyframes changeBg2 {
+   0%{
+    background-color:var(--bg);
+   }33.33%{
+    background-color: var(--bg);
+   }49.5%{
+    background-color: var(--mc);
+   }70%{
+    background-color:var(--bg);
+   }100%{
+    background-color:var(--bg);
+   }
+  }
+  @keyframes changeBg3 {
+   0%{
+    background-color:var(--bg);
+   }66.66%{
+    background-color:var(--bg);
+   }87%{
+    background-color:var(--mc);
+   }100%{
+    background-color:var(--bg);
+   }
+  }
+  .gradient{
+   position: absolute;
+   top:-500px;
+   left:-490px;
+   width:300%;
+   height:300%;
+   background: radial-gradient(circle, rgba(232,255,206,0) 0%, var(--bg) 30%);
+   transition: all 1s;
+  }
+  .card:hover .gradient{
+   top:-380px;
+   left:-300px;
+  }
+  .card-content{
+   position: absolute;
+   top:0;
+   left:0;
+   width:100%;
+   height:100%;
+   padding:15px;
+   padding-top:90px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   color:var(--text-color);
+
+  }
+  .card-content i{
+   width: 50px;
+   height:50px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border:1px solid var(--border-color);
+   border-radius: 50%;
+   transition: all 0.5s;
+  }
+  .card-content p{
+   color:rgba(255, 255, 255, 0.5);
+   line-height: 25px;
+  }
+  .card:hover .card-content i{
+   color:var(--mcf);
+   border-color:var(--mcf);
+   background-color:var(--mc);
+}

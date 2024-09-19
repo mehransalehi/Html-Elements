@@ -1,0 +1,135 @@
+:root {
+      --minDis: 2%;
+      --maxDis: 15%;
+      --time: 8s;
+      --line: #21E6C1;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: radial-gradient(circle at 50% 50%, #222, #111, #080808);
+    }
+
+    .content {
+      width: 500px;
+      aspect-ratio: 1;
+      position: relative;
+      animation: spin var(--time) linear 0s infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+
+    .content:hover {
+      animation-play-state: paused;
+    }
+
+    .img {
+      width: 48%;
+      aspect-ratio: 1;
+      background-image: url('https://fastly.picsum.photos/id/555/200/300.jpg?grayscale&hmac=tkpVjQvGKIephXoQ67uBdHRQ8EgAuUPPgJqJzdBZy8c');
+      border-radius: 100%;
+      background-size: cover;
+      background-position: center 70%;
+      animation: spin var(--time) linear 0s infinite reverse;
+      transition: all 1s;
+    }
+
+    .image-2 {
+      background-image: url('https://fastly.picsum.photos/id/555/200/300.jpg?grayscale&hmac=tkpVjQvGKIephXoQ67uBdHRQ8EgAuUPPgJqJzdBZy8c');
+    }
+
+    .image-3 {
+      background-image: url('./6.jpg');
+    }
+
+    .content:hover .img {
+      animation-play-state: paused;
+      scale: 0.5;
+    }
+
+
+
+    .content>div:not(.img) {
+      position: absolute;
+      width: 70%;
+      aspect-ratio: 1;
+      border-radius: 100%;
+      box-sizing: border-box;
+      box-shadow: -3vmin 3vmin 3vmin 0 #161616 inset, 1vmin -1vmin 0.125vmin -1.25vmin var(--line);
+      background:
+        radial-gradient(circle at 36% 64%, #fff0 0 calc(53.5% - 1px), var(--line) 53.5% 54%, #fff0 calc(54% + 1px) 100%),
+        radial-gradient(circle at 38% 62%, #fff0 0 calc(54.5% - 1px), var(--line) 54.5% 55%, #fff0 calc(55% + 1px) 100%),
+        radial-gradient(circle at 42% 58%, #fff0 0 calc(57.75% - 1px), var(--line) 57.75% 58%, #fff0 calc(58% + 1px) 100%),
+        radial-gradient(circle at 40% 60%, #fff0 0 calc(56.75% - 1px), var(--line) 56.75% 57%, #fff0 calc(57% + 1px) 100%),
+        radial-gradient(circle at 45% 55%, #fff0 0 calc(61.75% - 1px), var(--line) 61.75% 62%, #fff0 calc(62% + 1px) 100%),
+        radial-gradient(circle at 43.5% 56.5%, #fff0 0 calc(59.75% - 1px), var(--line) 59.75% 60%, #fff0 calc(60% + 1px) 100%),
+        radial-gradient(circle at 45% 55%, #fff0 0 calc(64.5% - 1px), var(--line) 64.5% 64.75%, #fff0 calc(64.75% + 1px) 100%),
+        radial-gradient(circle at 46.5% 53.5%, #fff0 0 calc(65.5% - 1px), var(--line) 65.5% 65.75%, #fff0 calc(65.75% + 1px) 100%),
+        radial-gradient(circle at 48.5% 51.5%, #fff0 0 calc(67.75% - 1px), var(--line) 67.75% 68.25%, #fff0 calc(68.25% + 1px) 100%),
+        radial-gradient(circle at 49% 51%, #fff0 0 calc(69.5% - 1px), var(--line) 69.5% 70%, #fff0 calc(70% + 1px) 100%);
+      transition: all 1s;
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .top-left {
+      left: var(--maxDis);
+      top: var(--minDis);
+    }
+
+    .left-bot {
+      bottom: var(--maxDis);
+      left: var(--minDis);
+      transform: rotate(-90deg);
+    }
+
+    .bot-right {
+      right: var(--maxDis);
+      bottom: var(--minDis);
+      transform: rotate(-180deg);
+    }
+
+    .right-top {
+      right: var(--minDis);
+      top: var(--maxDis);
+      transform: rotate(-270deg);
+    }
+
+    .content:hover .top-left {
+      left: 1%;
+      transform: rotate(45deg);
+    }
+
+    .content:hover .left-bot {
+      bottom: 1%;
+      transform: rotate(-45deg);
+    }
+
+    .content:hover .bot-right {
+      right: 1%;
+      transform: rotate(-135deg);
+    }
+
+    .content:hover .right-top {
+      top: 1%;
+      transform: rotate(-225deg);
+}

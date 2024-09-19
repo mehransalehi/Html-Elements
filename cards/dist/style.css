@@ -1,0 +1,114 @@
+.container {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   width: 100%;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   align-items: center;
+   margin: 0 auto;
+  }
+
+  .border {
+   height: 369px;
+   width: 290px;
+   background: transparent;
+   border-radius: 10px;
+   transition: border 1s;
+   position: relative;
+  }
+
+  .border:hover {
+   border: 1px solid #fff;
+  }
+
+  .card {
+   height: 379px;
+   width: 300px;
+   background: #808080;
+   border-radius: 10px;
+   transition: background 0.8s;
+   overflow: hidden;
+   background: #000;
+   box-shadow: 0 70px 63px -60px #000;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+   background-size: 300px;
+   background-position: center center;
+   background-repeat: no-repeat;
+   cursor: pointer;
+   margin: 20px;
+  }
+
+  .card:hover {
+   background-size: 600px;
+   background-position: left center;
+  }
+
+  .card:hover h2,
+  .card:hover h3,
+  .card:hover i {
+   opacity: 1;
+  }
+
+  .card0 {
+   background-image: url("https://www.uplooder.net/img/image/28/fa71ad1cc5cd579ce58d28c953462a6a/1.jpg");
+  }
+
+  .card1 {
+   background-image: url("https://www.uplooder.net/img/image/31/106ede1fbf7258ad69a9978474c89ef6/2.jpg");
+  }
+
+  .card2 {
+   background-image: url("https://www.uplooder.net/img/image/95/53907fcb30d6490f6a9c1d60747859f0/3.jpg");
+  }
+
+  .card3 {
+   background-image: url("https://www.uplooder.net/img/image/42/1a41e3b494d16949e5c85953fa102f76/4.jpg");
+  }
+
+  .card4 {
+   background-image: url("https://www.uplooder.net/img/image/88/5bb9df6cd254def5081d143854b2c9dd/5.jpg");
+  }
+
+  .card5 {
+   background-image: url("https://www.uplooder.net/img/image/29/6d05d415dfc87e17b44193ec3ff6b418/6.jpg");
+  }
+
+  h2 {
+   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+   color: #fff;
+   margin: 20px;
+   opacity: 0;
+   transition: opacity 1s;
+  }
+
+  h3 {
+   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+   color: #fff;
+   margin: 20px;
+   opacity: 0;
+   transition: opacity 1s;
+  }
+
+  .card i {
+   opacity: 0;
+   transition: opacity 1s;
+  }
+
+  .icons {
+   position: absolute;
+   fill: #fff;
+   color: #fff;
+   height: 130px;
+   top: 226px;
+   width: 50px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-around;
+  }

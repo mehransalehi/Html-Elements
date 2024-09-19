@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;600&display=swap');
+  body{
+   background-color:#1B2430;
+   font-family: 'Raleway', sans-serif;
+  }
+  .container{
+   position: absolute;
+   top:40%;
+   left:50%;
+   transform: translate(-50%,-50%);
+  }
+  .card{
+   position: relative;
+   height:150px;
+   width:300px;
+   text-align: center;
+   color:#51557E;
+  }
+  .card:hover .card-middle{
+   background-color: #D6D5A8;
+   transition: all .3s ease-out;
+   cursor: pointer;
+   color:#816797;
+  }
+  .center{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+  }
+  .card-middle{
+   width:100%;height:100%;
+   border-radius: 30px;
+   background-color:#fff;
+   z-index: 10;
+   position: relative;
+  }
+  .card-middle h1{
+   margin:4px;
+   font-size: 30px;
+  }
+  .card-middle span{
+   margin:4px;
+   font-size: 25px;
+  }
+  .card-top{
+   position:absolute;
+   width:95%;
+   height:120px;
+   border-top-right-radius: 30px;
+   border-top-left-radius: 30px;
+   left:50%;
+   transform: translateX(-50%);
+   transition: all .3s ease-out;
+   opacity: 0;
+   background-color:#1B2430;
+   z-index: 1;
+   box-shadow: 2px 2px 5px black,-2px -2px 5px black;
+   border:3px solid #D6D5A8;
+  }
+  .card-top i{
+   color:white;
+   font-size: 70px;
+   transform: rotate(-90deg) translateX(10px);
+  }
+  .card:hover .card-top{
+   transform: translate(-50%,-90px);
+   opacity: 1;
+  }
+
+  .card-bot{
+   position:absolute;
+   width:85%;
+   height:300px;
+   border-bottom-right-radius: 30px;
+   border-bottom-left-radius: 30px;
+   left:50%;
+   top:0;
+   transform: translateX(-50%);
+   transition: all .3s ease-out;
+   opacity: 0;
+   background-color:#fff;
+   z-index: 1;
+   box-shadow: 2px 2px 5px black,-2px -2px 5px black;
+   border:3px solid #D6D5A8;
+   justify-content: start;
+   padding:0 10px;
+   padding-top:50px;
+  }
+  .card-bot > div{
+   width:100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   font-weight: bold;
+   font-size: 14px ;
+   border-bottom : 1px solid #51557E;
+   margin: 0 20px;
+  }
+  .card-bot > button {
+   margin-top: 15px;
+   padding: 10px;
+   border: 2px solid #1B2430;
+   position: relative;
+   overflow: hidden;
+   background-color: transparent;
+   text-align: center;
+   text-transform: uppercase;
+   font-size: 16px;
+   transition: .3s;
+   z-index: 1;
+   font-weight: bold;
+   color: #1B2430;
+   cursor: pointer;
+  }
+
+  .card-bot > button::before {
+   content: '';
+   width: 0;
+   height: 300%;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%) rotate(45deg);
+   background: #D6D5A8;
+   transition: .5s ease;
+   display: block;
+   z-index: -1;
+  }
+
+  .card-bot > button:hover::before {
+   width: 105%;
+  }
+
+  .card-bot > button:hover {
+   color: #111;
+  }
+  .card-bot > div span{
+   margin:20px;
+  }
+  .card:hover .card-bot{
+   transform: translate(-50%,120px);
+   opacity: 1;
+  }

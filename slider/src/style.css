@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+    :root {
+      --gap: 10px;
+      --size: 200px;
+      --halfSize: calc(var(--size)/2);
+      --width: 700px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-image: linear-gradient(to right, #278EA5, #1F4287);
+      overflow: hidden;
+    }
+
+    .container {
+      width: 800px;
+      height: 200px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .triangle {
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      background-image: linear-gradient(to right, #071E3D 20%, #21E6C1 70%, transparent);
+      background-color: #071E3D;
+      clip-path: polygon(var(--halfSize) 0, var(--halfSize) 0, var(--size) var(--size), 0 var(--size));
+      transition: all 0.5s;
+      opacity: calc(var(--i) * 0.2);
+    }
+
+    .triangle:first-of-type {
+      opacity: 0.0;
+      left: calc(6 * var(--gap));
+      top: calc(6 * calc(var(--gap)/3));
+      z-index: 0;
+    }
+
+    .triangle:nth-of-type(2) {
+      opacity: 1;
+      left: calc(5 * var(--gap));
+      top: calc(5 * calc(var(--gap)/3));
+      z-index: 10;
+    }
+
+    .triangle:nth-of-type(3) {
+      opacity: 0.75;
+      left: calc(4 * var(--gap));
+      top: calc(4 * calc(var(--gap)/3));
+      z-index: 8;
+    }
+
+    .triangle:nth-of-type(4) {
+      opacity: 0.5;
+      left: calc(3 * var(--gap));
+      top: calc(3 * calc(var(--gap)/3));
+      z-index: 6;
+    }
+
+    .triangle:nth-of-type(5) {
+      opacity: 0.25;
+      left: calc(2 * var(--gap));
+      top: calc(2 * calc(var(--gap)/3));
+      z-index: 4;
+    }
+
+    .triangle:nth-of-type(6) {
+      opacity: 0.0;
+      left: calc(1 * var(--gap));
+      top: calc(1 * calc(var(--gap)/3));
+      z-index: 0;
+    }
+
+    .triangle.active {
+      clip-path: polygon(var(--halfSize) 0, var(--width) 0, calc(var(--width) - var(--halfSize)) var(--size), 0 var(--size));
+      width: var(--width);
+      transition: all 0.5s;
+      color: white;
+      background-image: linear-gradient(to right, #071E3D 20%, #21E6C1 70%, transparent);
+      background-color: transparent;
+    }
+
+    .triangle.exit {
+      clip-path: polygon(var(--halfSize) 0, var(--halfSize) 0, var(--size) var(--size), 0 var(--size));
+      background-color: green;
+      width: var(--size);
+      transition: all 1s;
+      color: white;
+      transform: translate(200%, 10px) rotate(360deg);
+      opacity: 0;
+    }
+
+    .triangle.active:hover img {
+      scale: 1.2;
+    }
+
+    .triangle img {
+      object-fit: cover;
+      width: var(--size);
+      position: absolute;
+      left: 40px;
+      bottom: -10px;
+      filter: blur(5px);
+      transition: all 0.5s;
+    }
+
+    .triangle.active img {
+      filter: blur(0px);
+    }
+
+    .triangle .content {
+      height: 100%;
+      padding: 25px 0;
+      position: absolute;
+      left: 260px;
+      width: 320px;
+      text-shadow: 1px 1px 3px black;
+      opacity: 0;
+      transition: 0.5s;
+    }
+
+    .triangle.active .content {
+      opacity: 1;
+      transition: 0.5s;
+    }
+
+    .content .title {
+      font-family: "Freeman", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 2rem;
+      transform: translateX(-100px);
+      opacity: 0;
+      transition: all 0.5s 0.3s;
+    }
+
+
+    .triangle.active .content .title {
+      transform: translateX(0px);
+      opacity: 1;
+    }
+
+    .content p {
+      font-family: "Montserrat", sans-serif;
+      font-optical-sizing: auto;
+      font-size: 0.8rem;
+      font-style: normal;
+      margin: 20px 0;
+      transform: translateX(-100px);
+      opacity: 0;
+      transition: all 0.5s 0.4s;
+    }
+
+    .triangle.active .content p {
+      transform: translateX(0px);
+      opacity: 1;
+    }
+
+    .content .btn-box {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      transform: translateX(-100px);
+      opacity: 0;
+      transition: all 0.5s 0.5s;
+
+    }
+
+    .triangle.active .content .btn-box {
+      transform: translateX(0px);
+      opacity: 1;
+    }
+
+    .content .btn-box i {
+      font-size: 22px;
+      margin-right: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .content .btn-box i:hover {
+      color: #278EA5;
+    }
+
+    .button {
+      position: absolute;
+      left: 50%;
+      top: 70%;
+      transform: translateX(-50%);
+      background-color: #21E6C1;
+      color: #071E3D;
+      width: 8.5em;
+      height: 2.9em;
+      border: #278EA5 0.2em solid;
+      border-radius: 11px;
+      text-align: right;
+      transition: all 0.6s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .button:hover {
+      background-color: #071E3D;
+      cursor: pointer;
+      color: #21E6C1;
+    }
+
+    .button i {
+      width: 1.6em;
+      display: flex;
+      transition: all 0.6s ease;
+    }
+
+    .button:hover i {
+      transform: translateX(5px);
+    }
+
+    .text {
+      margin: 0 10px
+    }

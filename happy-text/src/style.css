@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Licorice&family=Rubik+Doodle+Shadow&family=Rubik+Scribble&family=Zeyada&display=swap');
+
+    :root {
+      --bg: #eee;
+      --c1: #F73D93;
+      --c2: #FFD700;
+      --c3: #21E6C1;
+      --c4: #D89216;
+      --c5: #BC6FF1;
+    }
+
+    body {
+      background-color: var(--bg);
+    }
+
+    .main {
+      text-align: center;
+      border-top: 5px solid;
+      border-bottom: 5px solid;
+      border-image: linear-gradient(150deg, var(--c1) 0%, var(--c2) 20%, var(--c4) 40%, var(--c3) 60%, var(--c5) 80%) 10% 30%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10%;
+      flex-direction: column;
+    }
+
+    h1 {
+      font-size: 4.5rem;
+      font-family: "Licorice", cursive;
+      font-weight: 400;
+      font-style: normal;
+      background: linear-gradient(150deg, var(--c1) 0%, var(--c2) 20%, var(--c4) 40%, var(--c3) 60%, var(--c5) 80%);
+      background-size: 20% 20%;
+      background-color: #840b2a;
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: gradient 8s linear infinite;
+      margin: 30px 0;
+    }
+
+    .font-one {
+      font-family: "Rubik Scribble", system-ui;
+      animation-duration: 6s;
+    }
+
+    .font-two {
+      font-family: "Rubik Doodle Shadow", system-ui;
+      font-weight: 400;
+      font-style: normal;
+      animation-duration: 10s;
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 0%;
+      }
+
+      50% {
+        background-position: 50% 25%;
+      }
+
+      100% {
+        background-position: 100% 50%;
+      }
+}

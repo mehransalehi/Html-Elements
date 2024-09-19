@@ -1,0 +1,166 @@
+* {
+			box-sizing: border-box;
+			padding: 0;
+			margin: 0;
+		}
+
+		body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			background-color: black;
+		}
+
+		.content {
+			width: 500px;
+			aspect-ratio: 1;
+			perspective: 2000px;
+			transform-style: preserve-3d;
+		}
+
+		.earth {
+			width: 50%;
+			aspect-ratio: 1;
+			border-radius: 100%;
+			background-image: url('https://www.solarsystemscope.com/textures/download/2k_earth_daymap.jpg');
+			background-size: cover;
+			background-position: right center;
+			box-shadow: 1px 1px 5px black;
+			animation: spinEarth 15s linear 0s infinite;
+			box-shadow: inset 5px 12px 40px 12px black, inset -6px 0 12px 4px rgba(255, 255, 255, 0.3);
+			position: absolute;
+			transform: translate(-50%, -50%);
+			top: 50%;
+			left: 50%;
+			z-index: 10;
+		}
+
+		@keyframes spinEarth {
+			from {
+				background-position: 210% center;
+			}
+
+			to {
+				background-position: 0% center;
+			}
+		}
+
+
+
+		.moon {
+			position: relative;
+			width: 20%;
+			aspect-ratio: 1;
+			position: absolute;
+			transform: translate(-50%, -50%);
+			top: 40%;
+			left: 100%;
+			animation: moonEarth 20s linear 0s infinite;
+			transform-origin: -250% center;
+			transform-style: preserve-3d;
+		}
+
+		.moon::after {
+			content: "";
+			width: 100%;
+			aspect-ratio: 1;
+			border-radius: 100%;
+			background-image: url('https://www.solarsystemscope.com/textures/download/2k_moon.jpg');
+			background-size: cover;
+			background-position: right center;
+			transform-style: preserve-3d;
+			animation: moonEarthR 20s linear 0s infinite;
+			box-shadow: inset 1px 6px 30px 6px black, inset -6px 0 12px 4px rgba(255, 255, 255, 0.3);
+			position: absolute;
+			z-index: 10;
+		}
+
+		@keyframes moonEarth {
+			from {
+				transform: rotateY(0deg);
+			}
+
+			to {
+				transform: rotateY(360deg);
+			}
+		}
+
+		@keyframes moonEarthR {
+			from {
+				transform: rotateY(360deg);
+				background-position: 200% center;
+			}
+
+			to {
+				transform: rotateY(0deg);
+				background-position: 0% center;
+			}
+		}
+
+		.sat {
+			position: relative;
+			width: 8%;
+			aspect-ratio: 1;
+			position: absolute;
+			transform: translate(-50%, -50%);
+			top: 40%;
+			left: 80%;
+			animation: satRotate 10s linear 0s infinite;
+			transform-origin: -400% center;
+			transform-style: preserve-3d;
+		}
+
+		.sat::after {
+			content: "";
+			width: 100%;
+			aspect-ratio: 1;
+			border-radius: 100%;
+			background-image: url('./sat.png');
+			background-size: cover;
+			background-position: right center;
+			transform-style: preserve-3d;
+			animation: satRotateR 10s linear 0s infinite;
+			position: absolute;
+			z-index: 10;
+		}
+
+		@keyframes satRotate {
+			from {
+				transform: rotateZ(-45deg) rotateY(0deg);
+			}
+
+			to {
+				transform: rotateZ(-45deg) rotateY(360deg);
+			}
+		}
+
+		@keyframes satRotateR {
+			from {
+				transform: rotateY(360deg);
+				background-position: 200% center;
+			}
+
+			to {
+				transform: rotateY(0deg);
+				background-position: 0% center;
+			}
+		}
+
+		.star {
+			width: 2px;
+			height: 2px;
+			border-radius: 50%;
+			border-top-left-radius: 50%;
+			border-top-right-radius: 50%;
+			border-bottom-left-radius: 50%;
+			border-bottom-right-radius: 50%;
+			background-color: white;
+			position: absolute;
+			left: 40px;
+			top: 40px;
+			-webkit-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.6);
+			-moz-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.6);
+			box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.6);
+			z-index: -1;
+}
